@@ -41,7 +41,7 @@ class VLCMediaPlayer(MediaPlayer):
     def __get_options(self):
         options = []
 
-        if lookup_raspberry_pi_version() == 'pi4':
+        if lookup_raspberry_pi_version() in ['pi4', 'odc4']:
             if settings['audio_output'] == 'local':
                 options += [
                     '--alsa-audio-device=plughw:CARD=Headphones',
