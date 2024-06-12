@@ -28,7 +28,9 @@ def lookup_raspberry_pi_version():
     with open('/proc/device-tree/model') as file:
         content = file.read()
 
-        if 'Raspberry Pi 4' in content:
+        if 'Hardkernel ODROID-C4' in content:
+            return 'odc4'
+        elif 'Raspberry Pi 4' in content:
             return 'pi4'
         elif 'Raspberry Pi 3' in content:
             return 'pi3'
